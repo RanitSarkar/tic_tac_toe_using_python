@@ -4,8 +4,9 @@ player1move=[]
 move=0
 listofmoves=[0,2,4,5,7,9,10,12,14]
 movesdone=[]
-listofoutput=[[0,2,4],[5,7,9],[10,12,14],[0,5,10],[2,7,12],[4,9,14],[0,7,14],[4,7,10]]
+listofoutput=[[0,7,14],[0,2,4],[5,7,9],[10,12,14],[0,5,10],[2,7,12],[4,9,14],[4,7,10]]
 game_on=True
+
 
 def result_check():
     global list, listofoutput,game_on
@@ -15,20 +16,20 @@ def result_check():
             newlist.append(list[dashes])
         if newlist.count("X")==3:
             game_on=False
-            return "\n *********** Player1 is winner **********r"
+            print ("\n *********** Player1 is winner **********r")
         else:
             newlist.clear()
-            return "\n"
+
 
     for output in listofoutput:
         for dashes in output:
             newlist.append(list[dashes])
         if newlist.count("O")==3:
             game_on = False
-            return "\n *********** Player2 is winner **********"
+            print("\n *********** Player2 is winner **********")
         else:
             newlist.clear()
-            return "\n"
+
 
 def moveavilable(move):
     global listofmoves, movesdone
@@ -64,7 +65,7 @@ def player1():
     list[moveavilable(move)]="X"
     move = 0
     show()
-    print(result_check())
+    result_check()
 
 
 def player2():
@@ -76,7 +77,7 @@ def player2():
     else:
         list[moveavilable(move)] = "O"
         show()
-        print(result_check())
+        result_check()
 
 
 while game_on:
@@ -85,7 +86,5 @@ while game_on:
         player2()
     else:
         pass
-
-
 
 

@@ -30,6 +30,12 @@ def result_check():
         else:
             newlist.clear()
 
+    if len(listofmoves) == 0:
+        game_on=False
+        print("\n ********** its a tie *********")
+    else:
+        pass
+
 
 def moveavilable(move):
     global listofmoves, movesdone
@@ -86,5 +92,3 @@ while game_on:
         player2()
     else:
         pass
-
-
